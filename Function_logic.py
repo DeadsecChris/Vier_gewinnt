@@ -9,7 +9,7 @@ import UI
 
 def generate_board():
 
-    board_zeile = ["","a","","","","",""]
+    board_zeile = ["","","","","","",""]
     board = []
     counter = 1
 
@@ -34,19 +34,53 @@ def check_diagonal(boarrd,player):
     winner = 1
     return winner
 
+
+#Überprüfung Horizontal
+# board = generate_board()
+# vorheriges_symbol = "a"
+# counter = 1
+# gewonnen = 0
+# for zeile in board:
+#     for kaestchen in zeile:
+#         if kaestchen != "":
+#             if kaestchen == vorheriges_symbol:
+#                 counter = counter + 1
+
+#             else:
+#                 vorheriges_symbol = kaestchen
+#                 counter = 1
+
+#         else:
+#             counter = 1
+        
+#         if counter >= 4:
+#             gewonnen = 1
+#             break
+
+# print(gewonnen)
+
 board = generate_board()
-aktuelles_symbol = 
-for zeile in board:
-    for kaestchen in zeile:
-        if kaestchen != "":
-            aktuelles_symbol = kaestchen
+gewonnen = 0
+for zeile in range(0,len(board)-1):
+    for kaestchen in range(1,len(board[zeile])-1):
+        board[kaestchen][zeile]
+        if board[kaestchen][zeile] == board[kaestchen-1][zeile]:
+            counter = counter + 1
+        
+        else : 
+            counter = 1
 
-           
-        else:
-            print("besetzt!")
+        if counter >= 4:
+            gewonnen = 1
+            break
+
+print(gewonnen)
+
+        
+        
 
             
             
 
-print("")
+
     
