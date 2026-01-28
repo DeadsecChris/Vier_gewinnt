@@ -37,21 +37,23 @@ gewonnen = 0
 for zeile in board:
     for kaestchen in zeile:
         if kaestchen != "":
-            kaestchen_symbol = kaestchen
+            if counter_horizontal < 3:
+                kaestchen_symbol = kaestchen
 
-            if kaestchen_symbol == board[counter_horizontal + 1][counter_vertical ]:
-                counter = counter + 1
-            
-                if kaestchen_symbol == board[counter_horizontal + 2][counter_vertical ]:
+                if kaestchen_symbol == board[counter_horizontal + 1][counter_vertical ]:
                     counter = counter + 1
-
-                    if kaestchen_symbol == board[counter_horizontal + 3][counter_vertical ]:
+            
+                    if kaestchen_symbol == board[counter_horizontal + 2][counter_vertical ]:
                         counter = counter + 1
+
+                        if kaestchen_symbol == board[counter_horizontal + 3][counter_vertical ]:
+                            counter = counter + 1
 
         if counter >= 4:
             gewonnen = 1
             break
             
+
                 
         counter_vertical = counter_vertical + 1
 
